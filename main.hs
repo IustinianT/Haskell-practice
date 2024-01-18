@@ -9,12 +9,15 @@ mapFunc :: (t -> a) -> [t] -> [a]
 mapFunc f [] = []
 mapFunc f (x:xs) = f x : mapFunc f xs
 
+
 main :: IO()
 main = 
     do 
         --putStrLn "Hello World"
-        print (square 5)
-        print (lengthArr [1,2,3,4,5,6,7])
-        print (lengthArr ['1','2','3','4','5','6','7'])
-        print (mapFunc square [1..7])
-        print (map square [1..7])
+        --print (square 5)
+        --print (lengthArr [1,2,3,4,5,6,7])
+        --print (lengthArr ['1','2','3','4','5','6','7'])
+        --print (mapFunc square [1..7])
+        --print (map square [1..7])
+        print (foldr (-) 0 [1..5])
+        print (foldl (-) 0 [1..5])
