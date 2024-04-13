@@ -55,6 +55,9 @@ fib n
 iterate 0 f x = x
 iterate n f x = iterate (n-1) f (f x)
 
+append [] y z = y == z
+append (x:xs) y (z:zs) = append xs y zs
+
 main :: IO()
 main = do
         --putStrLn "Hello World"
@@ -73,4 +76,5 @@ main = do
         -- print (mult infinity 0)
         -- print (fib 6)
         -- print (roots 1 (-2) 1)
-        print (iterate 5 double 1)
+        -- print (iterate 5 double 1)
+        print (append [1,2,3] [4,5] [1,2,3,4,5])
