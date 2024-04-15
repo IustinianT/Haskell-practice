@@ -55,6 +55,9 @@ height (Leaf _) = 1
 height (Branch l r) = 1 + max (height l) (height r)
     where max x y = if x > y then x else y
 
+cartProd :: [a] -> [b] -> [(a, b)]
+cartProd xs ys = [(x,y) | x <- xs, y <- ys]
+
 main :: IO()
 main = do
         -- print(quad 2)
@@ -73,4 +76,5 @@ main = do
         -- print(elem' 2 [1,5,6,2,3])
         -- print(elem' 2 [1,5,6,3])
         -- print(take' 3 [1,2,3,4,5,6])
-        print(height (Branch (Leaf 1) (Branch (Leaf 2) (Leaf 3))))
+        -- print(height (Branch (Leaf 1) (Branch (Leaf 2) (Leaf 3))))
+        print(cartProd [1,2,3] ['a','b','c'])
